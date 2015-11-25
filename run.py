@@ -1,10 +1,12 @@
 from pymongo import MongoClient
-import db, os
+import db, os, json, requests, urllib
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.client import GoogleCredentials
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "coins.json"
+sep = ";"
+print "year" + sep + "name"  + sep + "boxOfficeId" + sep + "won" + sep + "twitter_mentions"
 
 # connect to mognodb
 client = MongoClient(db.conn_string)
@@ -16,26 +18,55 @@ credentials = GoogleCredentials.get_application_default()
 # construct the service object for interacting with the BigQuery API.
 bigquery_service = build("bigquery", "v2", credentials=credentials)
 
-try:
-    # run query
-    query_request = bigquery_service.jobs()
-    query_data = {
-        "query": (
-            "SELECT TOP(corpus, 10) as title, "
-            "COUNT(*) as unique_words "
-            "FROM [publicdata:samples.shakespeare];")
-    }
+# find all nominees
+for data in db.oscar_nominations_extended.find():
 
-    query_response = query_request.query(
-        projectId="coins-1128",
-        body=query_data).execute()
+	if data["film"]:
 
-    # print results
-    print("Query Results:")
-    for row in query_response["rows"]:
-        print('\t'.join(field["v"] for field in row["f"]))
-    # [END print_results]
+		try:
 
-except HttpError as err:
-    print('Error: {}'.format(err.content))
-    raise err
+			# fetch boxOfficeId
+			try:
+				url_params = urllib.urlencode({"movie": data["film"], "year": str(data["year"])})
+				resp = requests.get(url="http://boxofficeid.thomasbrueggemann.com/?" + url_params)
+				boxData = json.loads(resp.text)
+
+				boxId = boxData[0]["boxOfficeId"]
+			except:
+				boxId = ""
+
+			# build big query
+			sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE text LIKE \'%"
+			sql += data["film"]
+			sql += "%\';"
+
+			# run query
+			query_request = bigquery_service.jobs()
+			query_data = {
+				"query": (sql)
+			}
+
+			query_response = query_request.query(
+			    projectId="coins-1128",
+			    body=query_data
+			).execute()
+
+			# [{u'f': [{u'v': u'51369'}]}]
+			try:
+				result = str(data["year"]) + sep
+				result += data["film"] + sep
+				result += boxId + sep
+
+				if data["won"] == True:
+					result += "1" + sep
+				else:
+					result += "0" + sep
+
+				result += query_response["rows"][0]["f"][0]["v"]
+				print result
+			except:
+				pass
+
+		except HttpError as err:
+			print('Error: {}'.format(err.content))
+			raise err

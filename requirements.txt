@@ -1,2 +1,4 @@
 pymongo
 google-api-python-client==1.3.2
+requests
+urllib
