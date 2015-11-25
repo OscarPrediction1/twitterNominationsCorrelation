@@ -55,4 +55,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
 db.py
+coins.p12
+coins.json

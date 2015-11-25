@@ -1,8 +1,10 @@
 from pymongo import MongoClient
-import db
+import db, os
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.client import GoogleCredentials
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "coins.json"
 
 # connect to mognodb
 client = MongoClient(db.conn_string)
@@ -32,6 +34,7 @@ try:
     print("Query Results:")
     for row in query_response["rows"]:
         print('\t'.join(field["v"] for field in row["f"]))
+    # [END print_results]
 
 except HttpError as err:
     print('Error: {}'.format(err.content))
