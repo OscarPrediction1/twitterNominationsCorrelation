@@ -23,18 +23,17 @@ for data in db.oscar_nominations_extended.find():
 
 	if data["film"]:
 
+		# fetch boxOfficeId
 		try:
+			url_params = urllib.urlencode({"movie": data["film"], "year": str(data["year"])})
+			resp = requests.get(url="http://boxofficeid.thomasbrueggemann.com/?" + url_params)
+			boxData = json.loads(resp.text)
 
-			# fetch boxOfficeId
-			try:
-				url_params = urllib.urlencode({"movie": data["film"], "year": str(data["year"])})
-				resp = requests.get(url="http://boxofficeid.thomasbrueggemann.com/?" + url_params)
-				boxData = json.loads(resp.text)
+			boxId = boxData[0]["boxOfficeId"]
+		except:
+			boxId = ""
 
-				boxId = boxData[0]["boxOfficeId"]
-			except:
-				boxId = ""
-
+		try:
 			# build big query
 			sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE text LIKE \'%"
 			sql += data["film"]
@@ -52,21 +51,17 @@ for data in db.oscar_nominations_extended.find():
 			).execute()
 
 			# [{u'f': [{u'v': u'51369'}]}]
-			try:
-				result = str(data["year"]) + sep
-				result += data["film"] + sep
-				result += boxId + sep
+			result = str(data["year"]) + sep
+			result += data["film"] + sep
+			result += boxId + sep
 
-				if data["won"] == True:
-					result += "1" + sep
-				else:
-					result += "0" + sep
+			if data["won"] == True:
+				result += "1" + sep
+			else:
+				result += "0" + sep
 
-				result += query_response["rows"][0]["f"][0]["v"]
-				print result
-			except:
-				pass
+			result += query_response["rows"][0]["f"][0]["v"]
+			print result
 
-		except HttpError as err:
-			print('Error: {}'.format(err.content))
-			raise err
+		except:
+			pass
