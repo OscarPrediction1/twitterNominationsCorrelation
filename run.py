@@ -34,9 +34,13 @@ for data in db.oscar_nominations_extended.find():
 			boxId = ""
 
 		try:
+
+			# prepare movie for twitter quers
+			twit_movie = data["film"].split(" - ")[0].split(":")[0]
+
 			# build big query
 			sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE text LIKE \'%"
-			sql += data["film"]
+			sql += twit_movie
 			sql += "%\';"
 
 			# run query
