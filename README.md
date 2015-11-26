@@ -33,4 +33,9 @@ in projects home directory.
 		<td>Text-corpus to lowercase and also queries to lowercase to unify them. Replaced string "The" with ""</td>
 		<td>0.6421</td>
 	</tr>
+	<tr>
+		<td>results3.csv</td>
+		<td>Replaced "The " with "". Added "oscar" or "academy" to the movie name query.</td>
+		<td></td>
+	</tr>
 </table>
