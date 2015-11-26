@@ -41,7 +41,7 @@ for data in db.oscar_nominations_extended.find():
 			# build big query
 			sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE LOWER(text) LIKE \'%"
 			sql += twit_movie.lower()
-			sql += "%\';"
+			sql += "%\' AND (LOWER(text) LIKE \'%oscar%\' OR LOWER(text) LIKE \'%academy%\');"
 
 			# run query
 			query_request = bigquery_service.jobs()
