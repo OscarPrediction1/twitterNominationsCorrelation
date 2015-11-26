@@ -8,6 +8,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "coins.json"
 sep = ";"
 print "year" + sep + "name"  + sep + "boxOfficeId" + sep + "won" + sep + "twitter_mentions"
 
+movie_cache = {}
+
 # connect to mognodb
 client = MongoClient(db.conn_string)
 db = client.oscar
@@ -35,28 +37,35 @@ for data in db.oscar_nominations_extended.find():
 
 		try:
 
-			# prepare movie for twitter quers
-			twit_movie = data["film"].split(" - ")[0].split(":")[0].replace("The ", "")
+			if len(boxId) > 0 and !(boxId in movie_cache):
+				
+				# prepare movie for twitter quers
+				twit_movie = data["film"].split(" - ")[0].split(":")[0].replace("The ", "")
 
-			# build big query
-			sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE LOWER(text) LIKE \'%"
-			sql += twit_movie.lower()
-			sql += "%\' AND (LOWER(text) LIKE \'%"
-			sql += "oscar"
-			sql += "%\' OR LOWER(text) LIKE \'%"
-			sql += "academy"
-			sql += "%\');"
+				# build big query
+				sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE LOWER(text) LIKE \'%"
+				sql += twit_movie.lower()
+				sql += "%\' AND (LOWER(text) LIKE \'%"
+				sql += "oscar"
+				sql += "%\' OR LOWER(text) LIKE \'%"
+				sql += "academy"
+				sql += "%\');"
 
-			# run query
-			query_request = bigquery_service.jobs()
-			query_data = {
-				"query": (sql)
-			}
+				# run query
+				query_request = bigquery_service.jobs()
+				query_data = {
+					"query": (sql)
+				}
 
-			query_response = query_request.query(
-			    projectId="coins-1128",
-			    body=query_data
-			).execute()
+				query_response = query_request.query(
+				    projectId="coins-1128",
+				    body=query_data
+				).execute()
+
+				twitter_count = query_response["rows"][0]["f"][0]["v"]
+
+			else:
+				twitter_count = movie_cache[boxId]
 
 			# [{u'f': [{u'v': u'51369'}]}]
 			result = str(data["year"]) + sep
@@ -68,7 +77,12 @@ for data in db.oscar_nominations_extended.find():
 			else:
 				result += "0" + sep
 
-			result += query_response["rows"][0]["f"][0]["v"]
+			result += twitter_count
+
+			# cache count
+			if len(boxId) > 0:
+				movie_cache[boxId] = twitter_count
+
 			print result
 
 		except:
