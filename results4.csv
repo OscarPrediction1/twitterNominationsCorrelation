@@ -1,0 +1,427 @@
+year;name;boxOfficeId;twitter_mentions;won
+2000;102 Dalmatians;102dalmatians;0;0
+2013;12 Years a Slave;twelveyearsaslave;1714;1
+2010;127 Hours;127hours;8;0
+2003;21 Grams;21grams;4;0
+2001;A Beautiful Mind;beautifulmind;7;1
+2011;A Better Life;abetterlife;0;0
+2005;A History of Violence;historyofviolence;0;0
+2009;A Prophet;;1;0
+2012;A Royal Affair;aroyalaffair;1;0
+2011;A Separation;aseperation;8;1
+2009;A Serious Man;seriousman;2;0
+2009;A Single Man;singleman;4;0
+2004;A Very Long Engagement;verylongengagement;0;0
+2001;A.I. Artificial Intelligence;ai;0;0
+2002;About a Boy;aboutaboy;1;0
+2002;About Schmidt;aboutschmidt;1;0
+2007;Across the Universe;acrosstheuniverse;0;0
+2002;Adaptation;;25;1
+2006;After the Wedding;afterthewedding;0;0
+2009;Ajami;ajami;5;0
+2011;Albert Nobbs;albertnobbs;0;0
+2010;Alice in Wonderland;;2;1
+2013;All Is Lost;allislost;9;0
+2000;Almost Famous;almostfamous;6;1
+2001;Amélie;;0;0
+2007;American Gangster;americangangster;5;0
+2013;American Hustle;davido2013;928;0
+2014;American Sniper;americansniper;1140;1
+2003;American Splendor;americansplendor;0;0
+2000;Amores Perros;amoresperros;4;0
+2012;Amour;amour;262;1
+2009;An Education;aneducation;9;0
+2010;Animal Kingdom;animalkingdom;0;0
+2012;Anna Karenina;annakarenina2012;7;1
+2011;Anonymous;anonymous;33;0
+2010;Another Year;anotheryear;18;0
+2006;Apocalypto;apocalypto;0;0
+2012;Argo;argo;1214;1
+2004;As It Is in Heaven;;0;0
+2007;Atonement;atonement;16;0
+2013;August: Osage County;augustosagecounty;183;0
+2008;Australia;australia;140;0
+2009;Avatar;avatar;109;1
+2007;Away from Her;awayfromher;3;0
+2006;Babel;babel;40;0
+2005;Batman Begins;batmanbegins;0;0
+2012;Beasts of the Southern Wild;beastsofthesouthernwild;30;0
+2007;Beaufort;beaufort;0;0
+2013;Before Midnight;beforemidnight;17;0
+2000;Before Night Falls;beforenightfalls;0;0
+2004;Before Sunset;beforesunset;1;0
+2011;Beginners;beginners;5;1
+2004;Being Julia;beingjulia;0;0
+2000;Billy Elliot;billyelliot;7;0
+2014;Birdman or (The Unexpected Virtue of Ignorance);;0;1
+2010;Biutiful;biutiful;2;0
+2001;Black Hawk Down;blackhawkdown;2;1
+2010;Black Swan;blackswan;18;1
+2006;Blood Diamond;blooddiamond;12;0
+2013;Blue Jasmine;bluejasmine;411;1
+2010;Blue Valentine;bluevalentine;0;0
+2006;Borat Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan;;0;0
+2014;Boyhood;boyhood;1896;1
+2011;Bridesmaids;wiigapatow;11;0
+2009;Bright Star;brightstar;0;0
+2005;Brokeback Mountain;brokebackmountain;23;1
+2011;Bullhead;bullhead;0;0
+2005;Capote;capote;174;1
+2014;Captain America: The Winter Soldier;marvel14b;10;0
+2013;Captain Phillips;captainphillips;274;0
+2000;Cast Away;castaway;3;0
+2002;Catch Me If You Can;catchmeifyoucan;5;0
+2008;Changeling;changeling08;0;0
+2005;Charlie and the Chocolate Factory;charliechocolate;2;0
+2002;Chicago;chicago;1140;1
+2006;Children of Men;childrenofmen;9;0
+2000;Chocolat;chocolat;321;0
+2005;Cinderella Man;cinderellaman;2;0
+2003;City of God;cityofgod;5;0
+2006;Click;click;121;0
+2004;Closer;closer;63;0
+2009;Coco before Chanel;;0;0
+2003;Cold Mountain;coldmountain;2;1
+2004;Collateral;collateral;1;0
+2005;Crash;crash05;403;1
+2009;Crazy Heart;crazyheart;0;1
+2000;Crouching Tiger, Hidden Dragon;crouchingtigerhiddendragon;3;1
+2006;Curse of the Golden Flower;curseofthegoldenflower;0;0
+2013;Dallas Buyers Club;dallasbuyersclub;1269;1
+2014;Dawn of the Planet of the Apes;dawnoftheapes;7;0
+2006;Days of Glory (Indigènes);;0;0
+2008;Departures;departures;1;1
+2003;Dirty Pretty Things;dirtyprettythings;1;0
+2009;District 9;district9;4;0
+2000;Divided We Fall;dividedwefall;0;0
+2012;Django Unchained;djangounchained;92;1
+2010;Dogtooth;dogtooth;0;0
+2008;Doubt;doubt;89;0
+2004;Downfall;downfall;1;0
+2006;Dreamgirls;dreamgirls;9;1
+2011;Drive;;444;0
+2007;Eastern Promises;easternpromises;1;0
+2002;El Crimen del Padre Amaro;elcrimendelpadreamaro;0;0
+2007;Elizabeth: The Golden Age;goldenage;56;1
+2001;Elling;elling;211;0
+2000;Erin Brockovich;erinbrockovich;15;1
+2004;Eternal Sunshine of the Spotless Mind;eternalsunshine;1;1
+2000;Everybody Famous!;;0;0
+2003;Evil;;261;0
+2011;Extremely Loud & Incredibly Close;extremelyloud;0;0
+2002;Far from Heaven;;3;0
+2003;Finding Nemo;findingnemo;18;0
+2004;Finding Neverland;findingneverland;10;0
+2006;Flags of Our Fathers;flagsofourfathers;0;0
+2012;Flight;flight;393;0
+2011;Footnote;footnote;2;0
+2014;Foxcatcher;foxcatcher;220;0
+2002;Frida;frida;313;1
+2008;Frost/Nixon;frostnixon;2;0
+2008;Frozen River;frozenriver;0;0
+2002;Gangs of New York;gangsofnewyork;13;0
+2001;Ghost World;ghostworld;0;0
+2003;Girl with a Pearl Earring;girlwithapearlearring;0;0
+2000;Gladiator;gladiator;50;1
+2007;Gone Baby Gone;gonebabygone;0;0
+2014;Gone Girl;gonegirl;137;0
+2005;Good Night, and Good Luck.;goodnightandgoodluck;0;0
+2001;Gosford Park;gosfordpark;2;1
+2013;Gravity;gravity;6252;1
+2014;Guardians of the Galaxy;marvel2014a;12;0
+2006;Half Nelson;halfnelson;2;0
+2008;Happy-Go-Lucky;happygolucky;2;0
+2010;Harry Potter and the Deathly Hallows Part 1;harrypotter7;0;0
+2011;Harry Potter and the Deathly Hallows Part 2;harrypotter72;0;0
+2005;Harry Potter and the Goblet of Fire;harrypotter4;0;0
+2009;Harry Potter and the Half-Blood Prince;harrypotter6;0;0
+2004;Harry Potter and the Prisoner of Azkaban;harrypotter3;50;0
+2008;Hellboy II: The Golden Army;hellboy2;0;0
+2013;Her;;29911;1
+2010;Hereafter;hereafter;3;0
+2002;Hero;;3141;0
+2000;Hollow Man;hollowman;0;0
+2004;Hotel Rwanda;hotelrwanda;6;0
+2004;House of Flying Daggers;houseofflyingdaggers;0;0
+2003;House of Sand and Fog;houseofsandandfog;0;0
+2011;Hugo;hugocabret;1206;1
+2005;Hustle & Flow;;0;0
+2010;I Am Love;iamlove;0;0
+2001;I Am Sam;iamsam;1;0
+2004;I, Robot;irobot;0;0
+2014;Ida;ida;5163;1
+2009;Il Divo;ildivo;0;0
+2010;In a Better World;inabetterworld;0;1
+2003;In America;inamerica;94;0
+2008;In Bruges;inbruges;1;0
+2011;In Darkness;indarkness;0;0
+2001;In the Bedroom;inthebedroom;1;0
+2009;In the Loop;intheloop;1;0
+2007;In the Valley of Elah;inthevalleyofelah;0;0
+2010;Incendies;;0;0
+2010;Inception;inception;77;1
+2009;Inglourious Basterds;inglouriousbasterds;6;1
+2014;Inherent Vice;inherentvice;7;0
+2013;Inside Llewyn Davis;insidellewyndavis;43;0
+2014;Interstellar;interstellar;259;1
+2007;Into the Wild;intothewild;1;0
+2014;Into the Woods;intothewoods;22;0
+2009;Invictus;eastwood09;2;0
+2001;Iris;iris;176;1
+2008;Iron Man;ironman;14;0
+2010;Iron Man 2;ironman2;1;0
+2013;Iron Man 3;ironman3;10;0
+2011;Jane Eyre;janeeyre2011;0;0
+2005;Joyeux Noël;;0;0
+2009;Julie & Julia;julieandjulia;0;0
+2005;Junebug;junebug;0;0
+2007;Juno;juno;126;1
+2007;Katyn;;1;0
+2005;King Kong;kingkong05;1;1
+2004;Kinsey;kinsey;2;0
+2012;Kon-Tiki;kontiki;1;0
+2007;La Vie en Rose;lavieenrose;4;1
+2001;Lagaan;lagaan;1;0
+2007;Lars and the Real Girl;larsandtherealgirl;0;0
+2012;Les Misérables;;24;1
+2006;Letters from Iwo Jima;lettersfromiwojima;0;1
+2014;Leviathan;;6;0
+2012;Life of Pi;lifeofpi;134;1
+2012;Lincoln;lincoln;650;1
+2006;Little Children;littlechildren;1;0
+2006;Little Miss Sunshine;littlemisssunshine;6;1
+2013;Lone Survivor;lonesurvivor;10;0
+2003;Lost in Translation;lostintranslation;13;1
+2000;Malèna;;0;0
+2014;Maleficent;maleficient;19;0
+2011;Margin Call;margincall;0;0
+2004;Maria Full of Grace;mariafullofgrace;0;0
+2006;Marie Antoinette;marieantoinette;1;1
+2003;Master and Commander: The Far Side of the World;masterandcommander;0;1
+2005;Match Point;matchpoint;0;0
+2001;Memento;memento;6;0
+2005;Memoirs of a Geisha;memoirsofageisha;0;1
+2007;Michael Clayton;michaelclayton;1;1
+2011;Midnight in Paris;midnightinparis;5;1
+2008;Milk;milk;250;1
+2004;Million Dollar Baby;milliondollarbaby;25;1
+2002;Minority Report;minorityreport;2;0
+2012;Mirror Mirror;untitledsnowwhite;1;0
+2011;Moneyball;moneyball;21;0
+2007;Mongol;mongol;7;0
+2011;Monsieur Lazhar;;0;0
+2003;Monster;monster;147;1
+2001;Monsters, Inc.;monstersinc;0;0
+2012;Moonrise Kingdom;moonrisekingdom;9;0
+2001;Moulin Rouge;;19;1
+2014;Mr. Turner;mrturner;2;0
+2005;Mrs. Henderson Presents;mrshendersonpresents;0;0
+2001;Mulholland Drive;mulhollanddrive;1;0
+2005;Munich;munich;131;0
+2002;My Big Fat Greek Wedding;mybigfatgreekwedding;2;0
+2011;My Week with Marilyn;myweekwithmarilyn;4;0
+2003;Mystic River;mysticriver;6;1
+2013;Nebraska;nebraska;390;0
+2014;Nightcrawler;nightcrawlers;96;0
+2009;Nine;nine;136;0
+2007;No Country for Old Men;nocountryforoldmen;7;1
+2007;Norbit;norbit;2;0
+2005;North Country;northcountry;0;0
+2006;Notes on a Scandal;notesonascandal;0;0
+2002;Nowhere in Africa;nowhereinafrica;0;1
+2000;O Brother, Where Art Thou?;obrotherwhereartthou;0;0
+2010;Outside the Law (Hors-la-loi);outsidethelaw;0;0
+2005;Paradise Now;paradisenow;0;0
+2001;Pearl Harbor;pearlharbor;30;1
+2013;Philomena;philomena;258;0
+2003;Pieces of April;piecesofapril;0;0
+2007;Pirates of the Caribbean: At World's End;piratesofthecaribbean3;2;0
+2006;Pirates of the Caribbean: Dead Man's Chest;piratesofthecaribbean2;2;1
+2003;Pirates of the Caribbean: The Curse of the Black Pearl;piratesofthecaribbean;2;0
+2000;Pollock;pollock;4;1
+2006;Poseidon;poseidon;0;0
+2009;Precious: Based on the Novel 'Push' by Sapphire;;39;1
+2005;Pride & Prejudice;;0;0
+2013;Prisoners;prisoners;41;0
+2012;Prometheus;prometheus;1;0
+2000;Quills;quills;1;0
+2010;Rabbit Hole;rabbithole;0;0
+2008;Rachel Getting Married;rachelgettingmarried;0;0
+2007;Ratatouille;ratatouille;7;0
+2004;Ray;ray;4174;1
+2011;Real Steel;realsteel;1;0
+2000;Requiem for a Dream;requiemforadream;4;0
+2008;Revanche;revanche;2;0
+2008;Revolutionary Road;revolutionaryroad;1;0
+2011;Rise of the Planet of the Apes;riseoftheapes;0;0
+2002;Road to Perdition;roadtoperdition;0;1
+2003;Seabiscuit;seabiscuit;0;0
+2001;Sexy Beast;sexybeast;0;0
+2000;Shadow of the Vampire;shadowofthevampire;0;0
+2009;Sherlock Holmes;sherlockholmes;3;0
+2001;Shrek;shrek;26;0
+2004;Sideways;sideways;18;1
+2012;Silver Linings Playbook;silverliningsplaybook;147;1
+2012;Skyfall;bond23;34;1
+2008;Slumdog Millionaire;slumdogmillionaire;31;1
+2012;Snow White and the Huntsman;snowwhiteandthehuntsman;0;0
+2001;Son of the Bride;sonofthebride;0;0
+2005;Sophie Scholl - The Final Days;sophiescholl;0;0
+2000;Space Cowboys;spacecowboys;0;0
+2002;Spider-Man;spiderman;7;0
+2004;Spider-Man 2;spiderman2;1;1
+2009;Star Trek;startrek11;15;1
+2013;Star Trek Into Darkness;startrek12;6;0
+2002;Star Wars Episode II Attack of the Clones;;0;0
+2005;Star Wars: Episode III Revenge of the Sith;;76;0
+2014;Still Alice;stillalice;310;1
+2006;Superman Returns;superman06;0;0
+2007;Sweeney Todd The Demon Barber of Fleet Street;;0;1
+2005;Syriana;syriana;5;1
+2002;Talk to Her;talktoher;3;1
+2014;Tangerines;tangerines;3;0
+2001;The Affair of the Necklace;affairofthenecklace;0;0
+2011;The Artist;artist;502;1
+2007;The Assassination of Jesse James by the Coward Robert Ford;jessejames;0;0
+2004;The Aviator;aviator;26;1
+2008;The Baader Meinhof Complex;baadermeinhofcomplex;0;0
+2003;The Barbarian Invasions;barbarianinvasions;0;1
+2006;The Black Dahlia;blackdahlia;1;0
+2009;The Blind Side;blindside;28;1
+2007;The Bourne Ultimatum;bourneultimatum;1;1
+2013;The Broken Circle Breakdown;;4;0
+2000;The Cell;cell;263;0
+2004;The Chorus (Les Choristes);;0;0
+2005;The Chronicles of Narnia: The Lion, the Witch and the Wardrobe;narnia;0;1
+2005;The Constant Gardener;constantgardener;0;1
+2000;The Contender;contender;229;0
+2003;The Cooler;cooler;12;0
+2007;The Counterfeiters;counterfeiters;0;1
+2008;The Curious Case of Benjamin Button;curiouscaseofbenjaminbutton;6;1
+2008;The Dark Knight;darkknight;50;1
+2006;The Departed;departed;34;1
+2011;The Descendants;descendents;9;1
+2006;The Devil Wears Prada;devilwearsprada;2;0
+2007;The Diving Bell and the Butterfly;divingbellandthebutterfly;0;0
+2008;The Duchess;duchess;17;1
+2010;The Fighter;fighter10;57;1
+2011;The Girl with the Dragon Tattoo;girlwiththedragontattoo;2;1
+2007;The Golden Compass;goldencompass;1;1
+2006;The Good Shepherd;goodshepherd;0;0
+2014;The Grand Budapest Hotel;grandbudapesthotel;704;1
+2013;The Grandmaster;grandmasters;6;0
+2013;The Great Beauty;greatbeauty;21;1
+2013;The Great Gatsby;;78;1
+2011;The Help;help2011;1332;1
+2012;The Hobbit: An Unexpected Journey;hobbit;85;0
+2014;The Hobbit: The Battle of the Five Armies;hobbit3;85;0
+2013;The Hobbit: The Desolation of Smaug;hobbit2;85;0
+2002;The Hours;hours;190;1
+2013;The Hunt;hunt2013;260;0
+2009;The Hurt Locker;hurtlocker;21;1
+2011;The Ides of March;idesofmarch;0;0
+2006;The Illusionist;illusionist;0;0
+2009;The Imaginarium of Doctor Parnassus;imaginariumofdoctorparnassus;0;0
+2014;The Imitation Game;imitationgame;613;1
+2012;The Impossible;impossible;35;0
+2004;The Incredibles;incredibles;3;1
+2013;The Invisible Woman;invisiblewoman;1;0
+2011;The Iron Lady;ironlady;5;1
+2014;The Judge;judge;188;0
+2010;The Kids Are All Right;kidsareallright;4;0
+2006;The Last King of Scotland;lastkingofscotland;1;1
+2003;The Last Samurai;lastsamurai;1;0
+2009;The Last Station;thelaststation;0;0
+2006;The Lives of Others;livesofothers;0;1
+2013;The Lone Ranger;loneranger;11;0
+2001;The Lord of the Rings: The Fellowship of the Ring;fellowshipofthering;22;1
+2003;The Lord of the Rings: The Return of the King;returnoftheking;22;1
+2002;The Lord of the Rings: The Two Towers;twotowers;22;1
+2009;The Lovely Bones;lovelybones;1;0
+2002;The Man without a Past;;0;0
+2012;The Master;themaster;261;0
+2009;The Messenger;messenger09;22;0
+2009;The Milk of Sorrow;milkofsorrow;0;0
+2013;The Missing Picture;missingpicture;0;0
+2004;The Motorcycle Diaries;motorcyclediaries;0;0
+2005;The New World;newworld;7;0
+2004;The Passion of the Christ;passionofthechrist;0;0
+2000;The Patriot;patriot;68;0
+2000;The Perfect Storm;perfectstorm;1;0
+2004;The Phantom of the Opera;phantomoftheopera;2;0
+2002;The Pianist;pianist;22;1
+2004;The Polar Express;polarexpress;1;0
+2006;The Prestige;prestige;8;0
+2006;The Pursuit of Happyness;pursuitofhappyness;5;0
+2006;The Queen;queen;712;1
+2002;The Quiet American;quietamerican;0;0
+2008;The Reader;reader;33;1
+2001;The Royal Tenenbaums;royaltenenbaums;1;0
+2007;The Savages;savages;4;0
+2004;The Sea Inside;seainside;0;1
+2009;The Secret in Their Eyes;secretintheireyes;16;1
+2012;The Sessions;sixsessions;54;0
+2010;The Social Network;socialnetwork;58;1
+2005;The Squid and the Whale;squidandthewhale;0;0
+2000;The Taste of Others;tasteofothers;0;0
+2010;The Tempest;tempest10;7;0
+2014;The Theory of Everything;theoryofeverything;488;1
+2002;The Time Machine;timemachine;5;0
+2010;The Town;town10;339;0
+2011;The Tree of Life;treeoflife;3;0
+2003;The Twilight Samurai;;0;0
+2008;The Visitor;visitor08;14;0
+2010;The Way Back;wayback;14;0
+2009;The White Ribbon;whiteribbon;0;0
+2013;The Wolf of Wall Street;wolfofwallstreet;548;0
+2010;The Wolfman;wolfman;0;1
+2008;The Wrestler;wrestler;14;0
+2009;The Young Victoria;youngvictoria;0;1
+2007;There Will Be Blood;therewillbeblood;11;1
+2003;Thirteen;thirteen;4;0
+2014;Timbuktu;timbuktu;7;0
+2011;Tinker Tailor Soldier Spy;;1;0
+2010;Toy Story 3;toystory3;43;0
+2000;Traffic;traffic;1731;1
+2001;Training Day;trainingday;18;1
+2005;Transamerica;transamerica;0;0
+2007;Transformers;transformers06;7;0
+2011;Transformers: Dark of the Moon;transformers3;7;0
+2010;Tron: Legacy;;513;0
+2008;Tropic Thunder;tropicthunder;5;0
+2004;Troy;troy;262;0
+2010;True Grit;truegrit2010;12;0
+2005;Tsotsi;tsotsi;0;1
+2003;Twin Sisters;;0;0
+2014;Two Days, One Night;twodaysonenight;20;0
+2000;U-571;u-571;0;1
+2014;Unbroken;unbroken;58;0
+2002;Unfaithful;unfaithful;0;0
+2006;United 93;united93;0;0
+2010;Unstoppable;unstoppable;13;0
+2009;Up in the Air;upintheair;16;0
+2000;Vatel;vatel;2;0
+2006;Venus;venus;10;0
+2004;Vera Drake;veradrake;2;0
+2008;Vicky Cristina Barcelona;vickycristinabarcelona;1;1
+2006;Volver;volver;100;0
+2011;W.E.;wemadonna;0;0
+2005;Walk the Line;walktheline;6;1
+2008;WALL-E;wall-e;8;0
+2008;Waltz with Bashir;waltzwithbashir;0;0
+2008;Wanted;wanted;212;0
+2011;War Horse;warhorse;7;0
+2005;War of the Worlds;waroftheworlds;1;0
+2012;War Witch;warwitch;0;0
+2011;Warrior;warrior10;50;0
+2006;Water;water06;167;0
+2003;Whale Rider;whalerider;0;0
+2014;Whiplash;whiplash;1443;1
+2014;Wild Tales;wildtales;6;0
+2000;Wonder Boys;wonderboys;0;0
+2014;X-Men: Days of Future Past;xmen2014;35;0
+2002;Y Tu Mamá También;;1;0
+2000;You Can Count on Me;youcancountonme;0;0
+2003;Zelary;zelary;0;0
+2012;Zero Dark Thirty;binladen;93;1
+2002;Zus & Zo;zusandzo;0;0
