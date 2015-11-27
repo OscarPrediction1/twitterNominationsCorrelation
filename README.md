@@ -36,6 +36,6 @@ in projects home directory.
 	<tr>
 		<td>results3.csv</td>
 		<td>Replaced "The " with "". Added "oscar" or "academy" to the movie name query.</td>
-		<td></td>
+		<td>0.4687</td>
 	</tr>
 </table>
