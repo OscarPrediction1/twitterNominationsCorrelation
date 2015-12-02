@@ -1,12 +1,13 @@
 from pymongo import MongoClient
-import db, os, json, requests, urllib
+import db, os, json, requests, urllib, calendar, time
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.client import GoogleCredentials
+from datetime import datetime
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "coins.json"
 sep = ";"
-print "year" + sep + "name"  + sep + "boxOfficeId" + sep + "won" + sep + "twitter_mentions"
+print "year" + sep + "name"  + sep + "boxOfficeId" + sep + "won" + sep + "twitter_mentions_before_release" + sep + "twitter_mentions_after_release" + sep + "twitter_mentions_after_nomination"
 
 movie_cache = {}
 
@@ -20,10 +21,43 @@ credentials = GoogleCredentials.get_application_default()
 # construct the service object for interacting with the BigQuery API.
 bigquery_service = build("bigquery", "v2", credentials=credentials)
 
+# DATE TO UNIX
+def dateToUnix(d):
+	return float(calendar.timegm(time.strptime(str(d.day) + "/" + str(d.month) +  "/" + str(d.year), '%d/%m/%Y'))) * 1000.0
+
+# RUN BIG QUERY
+def runBigQuery(title, startdate, enddate):
+
+	# build big query
+	sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE LOWER(text) LIKE \'%"
+	sql += twit_movie.lower()
+	sql += "%\' AND (LOWER(text) LIKE \'%"
+	sql += "oscar"
+	sql += "%\' OR LOWER(text) LIKE \'%"
+	sql += "academy"
+	sql += "%\') AND timestamp_ms > "
+	sql += str(dateToUnix(startdate))
+	sql += " AND timestamp_ms < "
+	sql += str(dateToUnix(enddate))
+	sql += ";"
+
+	# run query
+	query_request = bigquery_service.jobs()
+	query_data = {
+		"query": (sql)
+	}
+
+	query_response = query_request.query(
+	    projectId="coins-1128",
+	    body=query_data
+	).execute()
+
+	return query_response["rows"][0]["f"][0]["v"]
+
 # find all nominees
 for data in db.oscar_nominations_extended.find():
 
-	if data["film"]:
+	if data["film"] and len(data["film"]) > 4:
 
 		# fetch boxOfficeId
 		try:
@@ -32,8 +66,10 @@ for data in db.oscar_nominations_extended.find():
 			boxData = json.loads(resp.text)
 
 			boxId = boxData[0]["boxOfficeId"]
+			releaseDate = boxData[0]["release"]
 		except:
 			boxId = ""
+			releaseDate = None
 
 		try:
 
@@ -42,27 +78,16 @@ for data in db.oscar_nominations_extended.find():
 				# prepare movie for twitter quers
 				twit_movie = data["film"].split(" - ")[0].split(":")[0].replace("The ", "")
 
-				# build big query
-				sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE LOWER(text) LIKE \'%"
-				sql += twit_movie.lower()
-				sql += "%\' AND (LOWER(text) LIKE \'%"
-				sql += "oscar"
-				sql += "%\' OR LOWER(text) LIKE \'%"
-				sql += "academy"
-				sql += "%\');"
+				twitter_count = {}
 
-				# run query
-				query_request = bigquery_service.jobs()
-				query_data = {
-					"query": (sql)
-				}
-
-				query_response = query_request.query(
-				    projectId="coins-1128",
-				    body=query_data
-				).execute()
-
-				twitter_count = query_response["rows"][0]["f"][0]["v"]
+				if releaseDate:
+					twitter_count["before_release"] = runBigQuery(twit_movie, datetime(1970, 1, 1), releaseDate)
+					twitter_count["after_release"] = runBigQuery(twit_movie, releaseDate, datetime(data["year"] + 1, 2, 22))
+				else:
+					twitter_count["before_release"] = 0
+					twitter_count["after_release"] = 0
+ 
+				twitter_count["after_nomination"] = runBigQuery(twit_movie, datetime(data["year"] + 1, 1, 15), datetime(data["year"] + 1, 2, 22))
 
 			else:
 				twitter_count = movie_cache[boxId]
@@ -77,7 +102,9 @@ for data in db.oscar_nominations_extended.find():
 			else:
 				result += "0" + sep
 
-			result += twitter_count
+			result += twitter_count["before_release"] + sep
+			result += twitter_count["after_release"] + sep
+			result += twitter_count["after_nomination"]
 
 			# cache count
 			if len(boxId) > 0:
