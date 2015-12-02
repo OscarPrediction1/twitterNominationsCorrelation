@@ -36,9 +36,9 @@ def runBigQuery(title, startdate, enddate):
 	sql += "%\' OR LOWER(text) LIKE \'%"
 	sql += "academy"
 	sql += "%\') AND timestamp_ms > "
-	sql += str(dateToUnix(startdate))
+	sql += "%f" % (dateToUnix(startdate))
 	sql += " AND timestamp_ms < "
-	sql += str(dateToUnix(enddate))
+	sql += "%f" % (dateToUnix(enddate))
 	sql += ";"
 
 	# run query
@@ -57,7 +57,7 @@ def runBigQuery(title, startdate, enddate):
 # find all nominees
 for data in db.oscar_nominations_extended.find():
 
-	if data["film"] and len(data["film"]) > 4:
+	if data["film"] and data["year"] >= 2006:
 
 		# fetch boxOfficeId
 		try:
@@ -66,51 +66,53 @@ for data in db.oscar_nominations_extended.find():
 			boxData = json.loads(resp.text)
 
 			boxId = boxData[0]["boxOfficeId"]
-			releaseDate = boxData[0]["release"]
+			releaseDate = datetime.strptime(boxData[0]["release"], "%Y-%m-%dT%H:%M:%S.000Z")
 		except:
 			boxId = ""
 			releaseDate = None
 
-		try:
+		if len(boxId) > 0:
 
-			if len(boxId) > 0 and !(boxId in movie_cache):
+			try:
+
+				if not (boxId in movie_cache):
 				
-				# prepare movie for twitter quers
-				twit_movie = data["film"].split(" - ")[0].split(":")[0].replace("The ", "")
+					# prepare movie for twitter quers
+					twit_movie = data["film"].split(" - ")[0].split(":")[0].replace("The ", "")
 
-				twitter_count = {}
+					twitter_count = {}
 
-				if releaseDate:
-					twitter_count["before_release"] = runBigQuery(twit_movie, datetime(1970, 1, 1), releaseDate)
-					twitter_count["after_release"] = runBigQuery(twit_movie, releaseDate, datetime(data["year"] + 1, 2, 22))
+					if releaseDate:
+						twitter_count["before_release"] = runBigQuery(twit_movie, datetime(1970, 1, 1), releaseDate)
+						twitter_count["after_release"] = runBigQuery(twit_movie, releaseDate, datetime(data["year"] + 1, 2, 22))
+					else:
+						twitter_count["before_release"] = 0
+						twitter_count["after_release"] = 0
+
+					twitter_count["after_nomination"] = runBigQuery(twit_movie, datetime(data["year"] + 1, 1, 15), datetime(data["year"] + 1, 2, 22))
+
 				else:
-					twitter_count["before_release"] = 0
-					twitter_count["after_release"] = 0
- 
-				twitter_count["after_nomination"] = runBigQuery(twit_movie, datetime(data["year"] + 1, 1, 15), datetime(data["year"] + 1, 2, 22))
+					twitter_count = movie_cache[boxId]
 
-			else:
-				twitter_count = movie_cache[boxId]
+				# [{u'f': [{u'v': u'51369'}]}]
+				result = str(data["year"]) + sep
+				result += data["film"] + sep
+				result += boxId + sep
 
-			# [{u'f': [{u'v': u'51369'}]}]
-			result = str(data["year"]) + sep
-			result += data["film"] + sep
-			result += boxId + sep
+				if data["won"] == True:
+					result += "1" + sep
+				else:
+					result += "0" + sep
 
-			if data["won"] == True:
-				result += "1" + sep
-			else:
-				result += "0" + sep
+				result += twitter_count["before_release"] + sep
+				result += twitter_count["after_release"] + sep
+				result += twitter_count["after_nomination"]
 
-			result += twitter_count["before_release"] + sep
-			result += twitter_count["after_release"] + sep
-			result += twitter_count["after_nomination"]
+				# cache count
+				if len(boxId) > 0:
+					movie_cache[boxId] = twitter_count
 
-			# cache count
-			if len(boxId) > 0:
-				movie_cache[boxId] = twitter_count
-
-			print result
-
-		except:
-			pass
+				print result
+			
+			except:
+				pass
