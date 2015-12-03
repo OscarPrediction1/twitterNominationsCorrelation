@@ -55,9 +55,9 @@ def runBigQuery(title, startdate, enddate):
 	return query_response["rows"][0]["f"][0]["v"]
 
 # find all nominees
-for data in db.oscar_nominations_extended.find():
+for data in db.oscar_nominations_extended.find({"$and": [{"year": {"$gte": 2014}}, {"year": {"$lt": 2015}}]}):
 
-	if data["film"] and data["year"] >= 2006:
+	if data["film"]:
 
 		# fetch boxOfficeId
 		try:

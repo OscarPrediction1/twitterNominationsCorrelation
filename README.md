@@ -38,4 +38,14 @@ in projects home directory.
 		<td>Replaced "The " with "". Added "oscar" or "academy" to the movie name query.</td>
 		<td>0.4687</td>
 	</tr>
+	<tr>
+		<td>results4.csv</td>
+		<td>?</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>results5.csv</td>
+		<td>Only movies form 2014 since twitter data set is only available from Sep. 14, 2014</td>
+		<td></td>
+	</tr>
 </table>
