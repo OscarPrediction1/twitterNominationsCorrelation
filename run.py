@@ -1,19 +1,12 @@
-from pymongo import MongoClient
 import db, os, json, requests, urllib, calendar, time
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.client import GoogleCredentials
 from datetime import datetime
+import csv
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "coins.json"
 sep = ";"
-print "year" + sep + "name"  + sep + "boxOfficeId" + sep + "won" + sep + "twitter_mentions_before_release" + sep + "twitter_mentions_after_release" + sep + "twitter_mentions_after_nomination"
-
-movie_cache = {}
-
-# connect to mognodb
-client = MongoClient(db.conn_string)
-db = client.oscar
 
 # grab the application's default credentials from the environment.
 credentials = GoogleCredentials.get_application_default()
@@ -29,7 +22,7 @@ def dateToUnix(d):
 def runBigQuery(title, startdate, enddate):
 
 	# build big query
-	sql = "SELECT COUNT(user.id_str) FROM [coins_twitter.movie_actor_director] WHERE LOWER(text) LIKE \'%"
+	sql = "SELECT text FROM [coins_twitter.movie_actor_director] WHERE LOWER(text) LIKE \'%"
 	sql += twit_movie.lower()
 	sql += "%\' AND (LOWER(text) LIKE \'%"
 	sql += "oscar"
@@ -52,67 +45,24 @@ def runBigQuery(title, startdate, enddate):
 	    body=query_data
 	).execute()
 
-	return query_response["rows"][0]["f"][0]["v"]
+	if "rows" in query_response:
+		return query_response["rows"]
+	else:
+		return []
 
 # find all nominees
-for data in db.oscar_nominations_extended.find({"$and": [{"year": {"$gte": 2014}}, {"year": {"$lt": 2015}}]}):
+with open("results5.csv", "rb") as csvfile:
 
-	if data["film"]:
-
-		# fetch boxOfficeId
-		try:
-			url_params = urllib.urlencode({"movie": data["film"], "year": str(data["year"])})
-			resp = requests.get(url="http://boxofficeid.thomasbrueggemann.com/?" + url_params)
-			boxData = json.loads(resp.text)
-
-			boxId = boxData[0]["boxOfficeId"]
-			releaseDate = datetime.strptime(boxData[0]["release"], "%Y-%m-%dT%H:%M:%S.000Z")
-		except:
-			boxId = ""
-			releaseDate = None
-
-		if len(boxId) > 0:
-
-			try:
-
-				if not (boxId in movie_cache):
+	csvfilereader = csv.reader(csvfile, delimiter=';')
+	for row in csvfilereader:
 				
-					# prepare movie for twitter quers
-					twit_movie = data["film"].split(" - ")[0].split(":")[0].replace("The ", "")
+		# prepare movie for twitter quers
+		twit_movie = row[1].split(" - ")[0].split(":")[0].replace("The ", "")
+		big_query_results = runBigQuery(twit_movie, datetime(2015, 1, 15), datetime(2015, 2, 22))
 
-					twitter_count = {}
+		for r in big_query_results:
+			print row[2] + ';' + '"' + r["f"][0]["v"].replace("\n", "").replace("\r", "") + '"'
 
-					if releaseDate:
-						twitter_count["before_release"] = runBigQuery(twit_movie, datetime(1970, 1, 1), releaseDate)
-						twitter_count["after_release"] = runBigQuery(twit_movie, releaseDate, datetime(data["year"] + 1, 2, 22))
-					else:
-						twitter_count["before_release"] = 0
-						twitter_count["after_release"] = 0
-
-					twitter_count["after_nomination"] = runBigQuery(twit_movie, datetime(data["year"] + 1, 1, 15), datetime(data["year"] + 1, 2, 22))
-
-				else:
-					twitter_count = movie_cache[boxId]
-
-				# [{u'f': [{u'v': u'51369'}]}]
-				result = str(data["year"]) + sep
-				result += data["film"] + sep
-				result += boxId + sep
-
-				if data["won"] == True:
-					result += "1" + sep
-				else:
-					result += "0" + sep
-
-				result += twitter_count["before_release"] + sep
-				result += twitter_count["after_release"] + sep
-				result += twitter_count["after_nomination"]
-
-				# cache count
-				if len(boxId) > 0:
-					movie_cache[boxId] = twitter_count
-
-				print result
-			
-			except:
-				pass
+#with open("results5_positivity.csv", "wb") as f:
+#    writer = csv.writer(f)
+#    writer.writerows(results)
