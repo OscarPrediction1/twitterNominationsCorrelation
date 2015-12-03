@@ -1,63 +1,29 @@
-year;name;boxOfficeId;won;twitter_mentions_before_release;twitter_mentions_after_release;twitter_mentions_after_nomination
-2014;Foxcatcher;foxcatcher;0;22;70;55
-2014;American Sniper;americansniper;0;33;321;308
-2014;The Imitation Game;imitationgame;0;56;73;59
-2014;The Theory of Everything;theoryofeverything;1;51;86;65
-2014;The Judge;judge;0;57;41;5
-2014;Boyhood;boyhood;0;0;406;321
-2014;Foxcatcher;foxcatcher;0;22;70;55
-2014;Whiplash;whiplash;1;9;226;178
-2014;Two Days, One Night;twodaysonenight;0;3;14;14
-2014;The Theory of Everything;theoryofeverything;0;51;86;65
-2014;Still Alice;stillalice;1;53;35;35
-2014;Gone Girl;gonegirl;0;14;68;29
-2014;Boyhood;boyhood;1;0;406;321
-2014;The Imitation Game;imitationgame;0;56;73;59
-2014;Into the Woods;intothewoods;0;1;4;4
-2014;The Grand Budapest Hotel;grandbudapesthotel;0;0;100;96
-2014;Ida;ida;0;0;530;201
-2014;Mr. Turner;mrturner;0;0;0;0
-2014;Unbroken;unbroken;0;32;7;5
-2014;The Grand Budapest Hotel;grandbudapesthotel;1;0;100;96
-2014;Inherent Vice;inherentvice;0;2;2;2
-2014;Into the Woods;intothewoods;0;1;4;4
-2014;Maleficent;maleficient;0;0;7;7
-2014;Mr. Turner;mrturner;0;0;0;0
-2014;Boyhood;boyhood;0;0;406;321
-2014;Foxcatcher;foxcatcher;0;22;70;55
-2014;The Grand Budapest Hotel;grandbudapesthotel;0;0;100;96
-2014;The Imitation Game;imitationgame;0;56;73;59
-2014;American Sniper;americansniper;0;33;321;308
-2014;Boyhood;boyhood;0;0;406;321
-2014;The Grand Budapest Hotel;grandbudapesthotel;0;0;100;96
-2014;The Imitation Game;imitationgame;0;56;73;59
-2014;Whiplash;whiplash;1;9;226;178
-2014;Ida;ida;1;0;530;201
-2014;Tangerines;tangerines;0;2;0;2
-2014;Timbuktu;timbuktu;0;2;4;4
-2014;Wild Tales;wildtales;0;1;3;4
-2014;American Sniper;americansniper;0;33;321;308
-2014;Boyhood;boyhood;0;0;406;321
-2014;The Grand Budapest Hotel;grandbudapesthotel;0;0;100;96
-2014;The Imitation Game;imitationgame;0;56;73;59
-2014;Selma;selma;0;65;491;477
-2014;The Theory of Everything;theoryofeverything;0;51;86;65
-2014;Whiplash;whiplash;0;9;226;178
-2014;American Sniper;americansniper;1;33;321;308
-2014;The Hobbit: The Battle of the Five Armies;hobbit3;0;4;5;2
-2014;Interstellar;interstellar;0;3;34;7
-2014;Unbroken;unbroken;0;32;7;5
-2014;Captain America: The Winter Soldier;marvel14b;0;0;2;2
-2014;Dawn of the Planet of the Apes;dawnoftheapes;0;0;0;0
-2014;Guardians of the Galaxy;marvel2014a;0;0;0;0
-2014;Interstellar;interstellar;1;3;34;7
-2014;X-Men: Days of Future Past;xmen2014;0;0;4;2
-2014;American Sniper;americansniper;0;33;321;308
-2014;The Imitation Game;imitationgame;1;56;73;59
-2014;Inherent Vice;inherentvice;0;2;2;2
-2014;The Theory of Everything;theoryofeverything;0;51;86;65
-2014;Whiplash;whiplash;0;9;226;178
-2014;Boyhood;boyhood;0;0;406;321
-2014;Foxcatcher;foxcatcher;0;22;70;55
-2014;The Grand Budapest Hotel;grandbudapesthotel;0;0;100;96
-2014;Nightcrawler;nightcrawlers;0;13;48;17
+year;name;boxOfficeId;twitter_mentions_after_nomination;won
+2014;American Sniper;americansniper;308;1
+2014;Boyhood;boyhood;321;1
+2014;Captain America: The Winter Soldier;marvel14b;2;0
+2014;Dawn of the Planet of the Apes;dawnoftheapes;0;0
+2014;Foxcatcher;foxcatcher;55;0
+2014;Gone Girl;gonegirl;29;0
+2014;Guardians of the Galaxy;marvel2014a;0;0
+2014;Ida;ida;201;1
+2014;Inherent Vice;inherentvice;2;0
+2014;Interstellar;interstellar;7;1
+2014;Into the Woods;intothewoods;4;0
+2014;Maleficent;maleficient;7;0
+2014;Mr. Turner;mrturner;0;0
+2014;Nightcrawler;nightcrawlers;17;0
+2014;Selma;selma;477;0
+2014;Still Alice;stillalice;35;1
+2014;Tangerines;tangerines;2;0
+2014;The Grand Budapest Hotel;grandbudapesthotel;96;1
+2014;The Hobbit: The Battle of the Five Armies;hobbit3;2;0
+2014;The Imitation Game;imitationgame;59;1
+2014;The Judge;judge;5;0
+2014;The Theory of Everything;theoryofeverything;65;1
+2014;Timbuktu;timbuktu;4;0
+2014;Two Days, One Night;twodaysonenight;14;0
+2014;Unbroken;unbroken;5;0
+2014;Whiplash;whiplash;178;1
+2014;Wild Tales;wildtales;4;0
+2014;X-Men: Days of Future Past;xmen2014;2;0
