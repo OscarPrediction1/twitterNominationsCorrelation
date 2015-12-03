@@ -46,6 +46,6 @@ in projects home directory.
 	<tr>
 		<td>results5.csv</td>
 		<td>Only movies form 2014 since twitter data set is only available from Sep. 14, 2014</td>
-		<td></td>
+		<td>0.0608</td>
 	</tr>
 </table>
